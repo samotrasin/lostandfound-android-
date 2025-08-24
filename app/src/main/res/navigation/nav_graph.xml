@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.itstep.myapplication.ui.found_items.FoundItemsFragment"
+        android:label="Found Items" />
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.itstep.myapplication.ui.profile.ProfileFragment"
+        android:label="Profile">
+        <action
+            android:id="@+id/action_profile_fragment_to_login_fragment"
+            app:destination="@id/login_fragment" />
+        <action
+            android:id="@+id/action_profile_fragment_to_profile_settings_fragment"
+            app:destination="@id/profile_settings_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profile_settings_fragment"
+        android:name="com.itstep.myapplication.ui.profile_settings.ProfileSettingsFragment"
+        android:label="Profile Settings" />
+
+    <fragment
+        android:id="@+id/login_fragment"
+        android:name="com.itstep.myapplication.ui.login.LoginFragment"
+        android:label="Login">
+        <action
+            android:id="@+id/action_login_fragment_to_sign_up_fragment"
+            app:destination="@id/sign_up_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/sign_up_fragment"
+        android:name="com.itstep.myapplication.ui.sign_up.SignUpFragment"
+        android:label="Sign Up">
+        <action
+            android:id="@+id/action_sign_up_fragment_to_login_fragment"
+            app:destination="@id/login_fragment" />
+    </fragment>
+
+</navigation>
